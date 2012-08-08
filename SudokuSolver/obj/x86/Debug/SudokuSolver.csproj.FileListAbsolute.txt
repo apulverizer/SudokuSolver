@@ -1,0 +1,11 @@
+C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\obj\x86\Debug\MainWindow.baml
+C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\obj\x86\Debug\MainWindow.g.cs
+C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\obj\x86\Debug\App.g.cs
+C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\obj\x86\Debug\SudokuSolver_MarkupCompile.cache
+C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\obj\x86\Debug\SudokuSolver.g.resources
+C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\obj\x86\Debug\SudokuSolver.Properties.Resources.resources
+C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\obj\x86\Debug\SudokuSolver.csproj.GenerateResource.Cache
+C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\bin\Debug\SudokuSolver.exe
+C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\bin\Debug\SudokuSolver.pdb
+C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\obj\x86\Debug\SudokuSolver.exe
+C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\obj\x86\Debug\SudokuSolver.pdb
