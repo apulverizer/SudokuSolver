@@ -9,3 +9,5 @@ C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\bin\Debug\SudokuSolver.exe
 C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\bin\Debug\SudokuSolver.pdb
 C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\obj\x86\Debug\SudokuSolver.exe
 C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\obj\x86\Debug\SudokuSolver.pdb
+C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\obj\x86\Debug\Sudoku.baml
+C:\Users\APulver\Desktop\SudokuSolver\SudokuSolver\obj\x86\Debug\Sudoku.g.cs

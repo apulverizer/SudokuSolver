@@ -31,7 +31,6 @@ namespace SudokuSolver
                 }
             }
         }
-
         void spaces_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             OnPropertyChanged("Collection");
@@ -50,33 +49,44 @@ namespace SudokuSolver
         }
         public bool StringToInt()
         {
-            try
+            for (int i = 0; i < 9; i++)
             {
-                for (int i = 0; i < 9; i++)
+                for (int j = 0; j < 9; j++)
                 {
-                    for (int j = 0; j < 9; j++)
+                    if ((StringSpace[i][j] == "") || (StringSpace[i][j].Contains(' ')) || (StringSpace[i][j]=="\b")|| (StringSpace[i][j]=="\t"))
                     {
-                        try
+                        spaces[i][j] = 0;
+                    }
+                    else
+                    {
+                        spaces[i][j] = Convert.ToInt32(StringSpace[i][j]);
+                        if (spaces[i][j] <= 0 || spaces[i][j] > 9)
                         {
-                            if ((StringSpace[i][j] == "") || (StringSpace[i][j] == " "))
-                            {
-                                spaces[i][j] = 0;
-                            }
-                            else
-                                spaces[i][j] = Convert.ToInt32(StringSpace[i][j]);
-                        }
-                        catch
-                        {
-                            spaces[i][j] = 0;
+                            throw new System.ArgumentException("Invalid character, please check.");
                         }
                     }
                 }
-                return true;
             }
-            catch
+            return true;
+        }
+        public bool IntToString()
+        {
+
+            for (int i = 0; i < 9; i++)
             {
-                return false;
+                for (int j = 0; j < 9; j++)
+                {
+                    if (spaces[i][j] == 0)
+                    {
+                        StringSpace[i][j] = "";
+                    }
+                    else
+                    {
+                        StringSpace[i][j] = spaces[i][j].ToString();
+                    }
+                }
             }
+            return true;
         }
 
         public bool SetSpace(int num, int row, int col)
@@ -109,9 +119,9 @@ namespace SudokuSolver
                 return -1;
             }
         }
-        public bool IsSolved()
+        public bool IsSolved(int row,int col)
         {
-            if (this.IsValid())
+            if (this.IsValid(row,col))
             {
                 for (int i = 0; i < 9; i++)
                 {
@@ -130,7 +140,58 @@ namespace SudokuSolver
                 return false;
             }
         }
+        public bool IsValid(int i, int j)
+        {
+            List<int> RowIndices;
+            List<int> ColIndices;
 
+            for (int r = 0; r < 9; r++)
+            {
+                if (spaces[i][j] == spaces[i][r] && r != j && spaces[i][j] != 0)
+                {
+                    return false;
+                }
+                if (spaces[r][j] == spaces[i][j] && i != r && spaces[i][j] != 0)
+                {
+                    return false;
+                }
+            }
+            if (i <= 2)
+            {
+                RowIndices = new List<int>() { 0, 1, 2 };
+            }
+            else if (i <= 5)
+            {
+                RowIndices = new List<int>() { 3, 4, 5 };
+            }
+            else
+            {
+                RowIndices = new List<int>() { 6, 7, 8 };
+            }
+            if (j <= 2)
+            {
+                ColIndices = new List<int>() { 0, 1, 2 };
+            }
+            else if (j <= 5)
+            {
+                ColIndices = new List<int>() { 3, 4, 5 };
+            }
+            else
+            {
+                ColIndices = new List<int>() { 6, 7, 8 };
+            }
+            foreach (int row in RowIndices)
+            {
+                foreach (int col in ColIndices)
+                {
+                    if (spaces[i][j] == spaces[row][col] && (i != row && j != col) && spaces[i][j] != 0)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         public bool IsValid()
         {
             List<int> RowIndices;
