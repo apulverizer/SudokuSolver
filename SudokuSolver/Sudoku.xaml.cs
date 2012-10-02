@@ -236,7 +236,7 @@ namespace SudokuSolver
                     MyBoard.ItemsSource = myboard.StringSpace;
                 }
             }
-        }
+        }   
         private void RemoveSpaces(Board board)
         {
             List<Tuple<int, int>> Spaces = new List<Tuple<int, int>>();
